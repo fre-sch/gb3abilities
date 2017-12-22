@@ -26,6 +26,12 @@ $(function(event) {
     var tplSrc = $("#ability-template").html()
     var tpl = _.template(tplSrc, {variable:"it"})
 
+    function resetScrollspy() {
+        $('[data-spy="scroll"]').each(function () {
+          var $spy = $(this).scrollspy('refresh')
+        })
+    }
+    
     function renderAbilities() {
         GB3.sortBy(sortKey, "asc")
         var $list = $("#ability-list")
@@ -52,12 +58,14 @@ $(function(event) {
         $(this).parent().parent().find("a.nav-link").removeClass("active")
         $(this).toggleClass("active")
         renderAbilities()
+        resetScrollspy()
     })
     $("#sort-ability").click(function() {
         sortKey = "e"
         $(this).parent().parent().find("a.nav-link").removeClass("active")
         $(this).toggleClass("active")
         renderAbilities()
+        resetScrollspy()
     })
 })
 </script>
