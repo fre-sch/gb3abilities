@@ -22,24 +22,44 @@ _.templateSettings = {
   interpolate: /\{\{(.+?)\}\}/g
 }
 $(function(event) {
-  var tplSrc = $("#ability-template").html()
-  var tpl = _.template(tplSrc, {variable:"it"})
-  var $list = $("#ability-list")
-  var index = null
-  for (var i=0; i < GB3.Abilities.length; ++i) {
-    var itemData = GB3.Abilities[i]
-    var itemIndex = itemData.l.toLowerCase().charAt(0)
-    var holder = document.createElement("template")
-    var item = {index: null}
-    if (itemIndex != index) {
-      index = itemIndex
-      item.index = index
+    var sortKey = "l"
+    var tplSrc = $("#ability-template").html()
+    var tpl = _.template(tplSrc, {variable:"it"})
+
+    function renderAbilities() {
+        GB3.sortBy(sortKey, "asc")
+        var $list = $("#ability-list")
+        $list.empty()
+        var index = null
+        for (var i=0; i < GB3.Abilities.length; ++i) {
+            var itemData = GB3.Abilities[i]
+            var itemIndex = itemData[sortKey].toLowerCase().charAt(0)
+            var holder = document.createElement("template")
+            var item = {index: null}
+            if (itemIndex != index) {
+                index = itemIndex
+                item.index = index
+            }
+            _.extend(item, itemData)
+            holder.innerHTML = tpl(item)
+            $list.append(holder.content)
+        }
     }
-    _.extend(item, itemData)
-    holder.innerHTML = tpl(item)
-    $list.append(holder.content)
-  }
-});
+    renderAbilities()
+
+    $("#sort-name").click(function() {
+        sortKey = "l"
+        $(this).parent().parent().find("a.nav-link").removeClass("active")
+        $(this).toggleClass("active")
+        renderAbilities()
+    })
+    $("#sort-ability").click(function() {
+        sortKey = "e"
+        $(this).parent().parent().find("a.nav-link").removeClass("active")
+        $(this).toggleClass("active")
+        renderAbilities()
+    })
+})
 </script>
 <style>
 body {
@@ -57,6 +77,14 @@ body {
 }
 .ability-special .ability-label {
   color: #e90;
+}
+#sorting {
+    position:sticky;
+    bottom:0;
+    background-color: #fff;
+}
+#sorting nav {
+    padding: 5px;
 }
 #alpha-index {
   position: sticky;
@@ -121,5 +149,19 @@ body {
 
   </div>
 </div>
+<footer id="sorting">
+    <div class="container">
+        <nav>
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#index-top" id="sort-name">By Name</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#index-top" id="sort-ability">By Ability</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
 </body>
 </html>

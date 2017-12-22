@@ -1,5 +1,14 @@
-GB3 = {}
-GB3.Abilities=[
+GB3 = {
+    sortBy: function(key, dir) {
+        dir = (dir == "asc" ? 1 : -1)
+        this.Abilities.sort(function(a, b) {
+            if (a[key] < b[key]) return -dir
+            if (a[key] > b[key]) return dir
+            return 0
+        });
+    }
+}
+GB3.Abilities = [
 {l:"8", e:"Reaction Speed", v:"+2.5%", t:"regular"},
 {l:"Active Binder", e:"Boost Speed", v:"+3%", t:"regular"},
 {l:"AGE System", e:"Awakening Duration", v:"+2s", t:"special"},
@@ -88,6 +97,7 @@ GB3.Abilities=[
 {l:"Pair Beam Coating", e:"Beam Guard", v:"+6%", t:"regular"},
 {l:"Phase Shift Armor", e:"Physical Resistance", v:"+15%", t:"regular"},
 {l:"Photon Battery", e:"Thruster Capacity", v:"+5000", t:"regular"},
+{l:"Photon Balancer", e:"Cancel Combo Damage", v:"+10%", t:"special"},
 {l:"Plasma Compression Furnace", e:"Thruster Capacity", v:"+4500", t:"regular"},
 {l:"Plavsky Particle Control", e:"Movement Speed", v:"+8%", t:"regular"},
 {l:"Power Extender", e:"Option Gauge Capacity", v:"+30%", t:"special"},
