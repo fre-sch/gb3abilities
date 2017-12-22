@@ -34,17 +34,20 @@ $(function(event) {
 });
 </script>
 <style>
+body {
+    position: relative;
+}
 .ability {
-  margin-bottom: 0.3em
+  margin-bottom: 0.5em
 }
 .ability-label {
   font-size: 1.1em;
-  font-weight: bold;
+  font-weight: 500;
 }
-.ability-regular {
+.ability-regular .ability-label {
   color: #555;
 }
-.ability-special {
+.ability-special .ability-label {
   color: #e90;
 }
 #alpha-index {
@@ -53,64 +56,61 @@ $(function(event) {
 }
 
 #gb3abilities .nav>li>a {
-  padding: 0 15px;
+  padding: 0 10px;
 }
-#gb3abilities .nav-pills>li.active>a,
-#gb3abilities .nav-pills>li.active>a:focus,
-#gb3abilities .nav-pills>li.active>a:hover {
-  padding: 10px 15px;
+#gb3abilities .nav>li>a.nav-link.active {
+  padding: 3px 10px;
 }
 </style>
 </head>
 <body data-spy="scroll" data-target="#alpha-index" id="gb3abilities">
 <template id="ability-template">
-  <div class="ability ability-{{it.t}}">
-    <div class="ability-label"><a id="{{it.index}}"></a>{{it.l}}</div>
-    <div class="ability-description">
-      {{it.e}} <span class="badge">{{it.v}}</span>
-    </div>
+  <div class="ability ability-{{it.t}}" id="{{it.index?'index-'+it.index:''}}">
+    <div class="ability-label">{{it.l}}</div>
+    <div class="ability-description">{{it.e}} {{it.v}}</div>
   </div>
 </template>
-<div class="container">
+<div class="container" id="index-top">
   <div class="row">
-    
+
+    <div class="col">
+      <div id="ability-list"></div>
+    </div>
+
     <div class="flex-column">
       <nav id="alpha-index">
-        <ul class="nav flex-column">
-          <li><a href="#a">A</a></li>
-          <li><a href="#b">B</a></li>
-          <li><a href="#c">C</a></li>
-          <li><a href="#d">D</a></li>
-          <li><a href="#e">E</a></li>
-          <li><a href="#f">F</a></li>
-          <li><a href="#g">G</a></li>
-          <li><a href="#h">H</a></li>
-          <li><a href="#i">I</a></li>
-          <li><a href="#j">J</a></li>
-          <li><a href="#k">K</a></li>
-          <li><a href="#l">L</a></li>
-          <li><a href="#m">M</a></li>
-          <li><a href="#n">N</a></li>
-          <li><a href="#o">O</a></li>
-          <li><a href="#p">P</a></li>
-          <li><a href="#q">Q</a></li>
-          <li><a href="#r">R</a></li>
-          <li><a href="#s">S</a></li>
-          <li><a href="#t">T</a></li>
-          <li><a href="#u">U</a></li>
-          <li><a href="#v">V</a></li>
-          <li><a href="#w">W</a></li>
-          <li><a href="#x">X</a></li>
-          <li><a href="#y">Y</a></li>
-          <li><a href="#z">Z</a></li>
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item"><a class="nav-link" href="#index-top">#</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-a">A</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-b">B</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-c">C</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-d">D</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-e">E</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-f">F</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-g">G</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-h">H</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-i">I</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-j">J</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-k">K</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-l">L</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-m">M</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-n">N</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-o">O</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-p">P</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-q">Q</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-r">R</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-s">S</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-t">T</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-u">U</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-v">V</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-w">W</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-x">X</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-y">Y</a></li>
+          <li class="nav-item"><a class="nav-link" href="#index-z">Z</a></li>
         </ul>
       </nav>
     </div>
-    
-    <div class="col-sm">
-      <div id="ability-list"></div>
-    </div
-      
+
   </div>
 </div>
 </body>
