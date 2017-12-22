@@ -46,9 +46,18 @@ $(function(event) {
 .ability-special {
   color: #e90;
 }
+
+#gb3abilities .nav>li>a {
+  padding: 0 15px;
+}
+#gb3abilities .nav-pills>li.active>a,
+#gb3abilities .nav-pills>li.active>a:focus,
+#gb3abilities .nav-pills>li.active>a:hover {
+  padding: 10px 15px;
+}
 </style>
 </head>
-<body>
+<body data-spy="scroll" data-target="#alpha-index" id="gb3abilities">
 <template id="ability-template">
   <div class="ability ability-{{it.t}}">
     <div class="ability-label"><a id="{{it.index}}"></a>{{it.l}}</div>
