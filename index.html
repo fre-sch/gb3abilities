@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gundam Breaker 3 - Break Edition: Abilities</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="data.js"></script>
+<script>
+_.templateSettings = {
+  interpolate: /\{\{(.+?)\}\}/g
+}
+document.addEventListener("DOMContentLoaded", function(event) {
+  
+	var tplSrc = document.querySelector("#ability-template").innerHTML
+	var tpl = _.template(tplSrc, {variable:"it"})
+	var list = document.querySelector("#ability-list")
+	for (var i=0; i < GB3.Abilities.length; ++i) {
+		var holder = document.createElement("template")
+    holder.innerHTML = tpl(GB3.Abilities[i])
+    list.appendChild(holder.content)
+	}
+});
+</script>
+<style>
+.ability {
+  margin-bottom: 0.3em
+}
+.ability-label {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.ability-regular {
+  color: #555;
+}
+.ability-special {
+  color: #e90;
+}
+</style>
+</head>
+<body>
+<template id="ability-template">
+  <div class="ability ability-{{it.t}}">
+    <div class="ability-label">{{it.l}}</div>
+    <div class="ability-description">
+      {{it.e}} {{it.v}}
+    </div>
+  </div>
+</template>
+<div class="container">
+  <div id="ability-list"></div>
+</div>
+</body>
+</html>
