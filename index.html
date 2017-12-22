@@ -2,27 +2,36 @@
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-<title>Gundam Breaker 3 - Break Edition: Abilities</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-<script src="data.js"></script>
-<script>
+  <title>Gundam Breaker 3 - Break Edition: Abilities</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="data.js"></script>
+  <script>
 _.templateSettings = {
   interpolate: /\{\{(.+?)\}\}/g
 }
-document.addEventListener("DOMContentLoaded", function(event) {
-  
-	var tplSrc = document.querySelector("#ability-template").innerHTML
+$(function(event) {
+	var tplSrc = $("#ability-template").html()
 	var tpl = _.template(tplSrc, {variable:"it"})
-	var list = document.querySelector("#ability-list")
+	var $list = $("#ability-list")
 	for (var i=0; i < GB3.Abilities.length; ++i) {
-		var holder = document.createElement("template")
-    holder.innerHTML = tpl(GB3.Abilities[i])
-    list.appendChild(holder.content)
-	}
+	  var itemData = GB3.Abilities[i]
+    var itemIndex = itemData.l.toLowerCase().charAt(0)
+    var holder = document.createElement("template")
+    var item = {index: null}
+    if (itemIndex != index) {
+      index = itemIndex
+      item.index = index
+    }
+    _.extend(item, itemData)
+    holder.innerHTML = tpl(item)
+    $list.append(holder.content)	
+  }
 });
-</script>
-<style>
+  </script>
+  <style>
 .ability {
   margin-bottom: 0.3em
 }
@@ -36,19 +45,55 @@ document.addEventListener("DOMContentLoaded", function(event) {
 .ability-special {
   color: #e90;
 }
-</style>
+  </style>
 </head>
 <body>
 <template id="ability-template">
   <div class="ability ability-{{it.t}}">
-    <div class="ability-label">{{it.l}}</div>
+    <div class="ability-label"><a id="{{it.index}}"></a>{{it.l}}</div>
     <div class="ability-description">
-      {{it.e}} {{it.v}}
+      {{it.e}} <span class="badge">{{it.v}}</span>
     </div>
   </div>
 </template>
 <div class="container">
-  <div id="ability-list"></div>
+  <div class="row">
+    <div class="col-xs-11">
+      <div id="ability-list"></div>
+    </div>
+    <div class="col-xs-1">
+      <nav data-spy="affix">
+        <ul class="nav nav-pills nav-stacked" id="alpha-index">
+          <li><a href="#a">A</a></li>
+          <li><a href="#b">B</a></li>
+          <li><a href="#c">C</a></li>
+          <li><a href="#d">D</a></li>
+          <li><a href="#e">E</a></li>
+          <li><a href="#f">F</a></li>
+          <li><a href="#g">G</a></li>
+          <li><a href="#h">H</a></li>
+          <li><a href="#i">I</a></li>
+          <li><a href="#j">J</a></li>
+          <li><a href="#k">K</a></li>
+          <li><a href="#l">L</a></li>
+          <li><a href="#m">M</a></li>
+          <li><a href="#n">N</a></li>
+          <li><a href="#o">O</a></li>
+          <li><a href="#p">P</a></li>
+          <li><a href="#q">Q</a></li>
+          <li><a href="#r">R</a></li>
+          <li><a href="#s">S</a></li>
+          <li><a href="#t">T</a></li>
+          <li><a href="#u">U</a></li>
+          <li><a href="#v">V</a></li>
+          <li><a href="#w">W</a></li>
+          <li><a href="#x">X</a></li>
+          <li><a href="#y">Y</a></li>
+          <li><a href="#z">Z</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </div>
 </body>
 </html>
