@@ -1,0 +1,47 @@
+{
+    "name": "Gundam Breaker 3 - Break Edition: Abilities",
+    "short_name": "GB3: Abilities",
+    "background_color": "rgb(255, 255, 255)",
+    "description": "Quick reference for Gundam Breaker 3 Abilities",
+    "lang": "en-US",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "theme_color": "rgb(57, 58, 163)",
+    "icons": [{
+        "src": "launcher-icons/favicon.png",
+        "sizes": "16x16",
+        "type": "image/png"
+    }, {
+        "src": "launcher-icons/36android.png",
+        "sizes": "36x36",
+        "type": "image/png",
+        "density": 0.75
+    }, {
+        "src": "launcher-icons/48android.png",
+        "sizes": "48x48",
+        "type": "image/png",
+        "density": 1.0
+    }, {
+        "src": "launcher-icons/72android.png",
+        "sizes": "72x72",
+        "type": "image/png",
+        "density": 1.5
+    }, {
+        "src": "launcher-icons/96android",
+        "sizes": "96x96",
+        "type": "image/png",
+        "density": 2.0
+    }, {
+        "src": "launcher-icons/144android",
+        "sizes": "144x144",
+        "type": "image/png",
+        "density": 3.0
+    }, {
+        "src": "launcher-icons/192android",
+        "sizes": "192x192",
+        "type": "image/png",
+        "density": 4.0
+    }],
+    "start_url": "index.html",
+    "display": "standalone"
+}
