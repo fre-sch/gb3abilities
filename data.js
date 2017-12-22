@@ -29,6 +29,7 @@ GB3.Abilities=[
 {l:"DG Cells", e:"Auto-Repair", v:"+1000/s", t:"regular"},
 {l:"DHGCP", e:"Thruster Capacity", v:"+5000", t:"special"},
 {l:"Double Pack", e:"Ranged Weapon Gauge Capacity", v:"+30%", t:"special"},
+{l:"Drum Frame", e:"Durability", v:"+15%", t:"special"},
 {l:"E-Carbon (GN particle coating)", e:"Durability", v:"+20%", t:"special"},
 {l:"Energy pack", e:"Ranged Weapon Gauge Capacity", v:"+20%", t:"regular"},
 {l:"Energy Pod", e:"Option Gauge Capacity", v:"+20%", t:"regular"},
