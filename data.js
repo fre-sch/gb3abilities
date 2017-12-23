@@ -74,7 +74,7 @@ GB3.Abilities = [
 {l:"Hyper Boost", e:"Boost Speed", v:"+10%", t:"special"},
 {l:"Hyper Deuterion Engine", e:"Option Charge Speed", v:"+20%", t:"special", s:["Legend Gundam", "Destiny Gundam Body"]},
 {l:"I Field Beam Drive", e:"Movement Speed", v:"+10%", t:"special"},
-{l:"IFS Unit", e:"Option Equipment DPS", v:"+7500"},
+{l:"IFS Unit", e:"Option Equipment DPS", v:"+7500", t:"special"},
 {l:"Indirect Sealing", e:"Parts-Out Resistance", v:"+25%", t:"special"},
 {l:"Intention Automatic System", e:"Reaction Speed", v:"+5%", t:"special"},
 {l:"Invisible Titanium", e:"Durability", v:"+20%", t:"special", s:["G-Self parts"]},
