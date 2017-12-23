@@ -80,6 +80,7 @@ GB3.Abilities = [
 {l:"High-Performance Optical Sensor Unit", e:"Shooting Mode Damage", v:"+50%", t:"special", s:["TR-1 Advanced Hazel Head"]},
 {l:"High-Power Generator", e:"Boost Recovery", v:"+15%", t:"special"},
 {l:"High-Precision Gun Camera", e:"Shooting Mode Damage", v:"+50%", t:"special", s:["Cherudim Gundam Head"]},
+{l:"High-Sensitivity Sensor", e:"Ranged Weapon Tracking Ability", v:"+25%", t:"special", s:["Gundam Gusion Rebake Head"]},
 {l:"High-Thrust Booster Unit", e:"Boost Speed", v:"+6%", t:"regular"},
 {l:"Horns of the Buffalo", e:"Awakening Duration", v:"+1.5s", t:"regular"},
 {l:"HPHGCP Generator", e:"Thruster Capacity", v:"+5000", t:"special"},
