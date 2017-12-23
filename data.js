@@ -24,7 +24,7 @@ GB3 = {
 GB3.Abilities = [
 {l:"8", e:"Reaction Speed", v:"+2.5%", t:"regular", s:["Astray Red Frame Body"]},
 {l:"Active Binder", e:"Boost Speed", v:"+3%", t:"regular"},
-{l:"AGE System", e:"Awakening Duration", v:"+2s", t:"special", s:["Gundam AGE-1 Body"]},
+{l:"AGE System", e:"Awakening Duration", v:"+2s", t:"special", s:["Gundam AGE-1 Body", "Gundam AGE-2 Normal Body", "Gundam AGE-3 Normal Body", "Gundam AGE-FX Body", "Gundam AGE-2 Dark Hound Body"]},
 {l:"Ahab Reactor", e:"Thruster Capacity", v:"+5000", t:"regular"},
 {l:"Alaya-Vijnana System", e:"Reaction Speed", v:"+5%", t:"special"},
 {l:"Anti-Beam Coating", e:"Beam Resistance", v:"+10%", t:"regular"},
@@ -105,6 +105,7 @@ GB3.Abilities = [
 {l:"Movable Frame", e:"Durability", v:"+10%", t:"regular", s:["Ex-S Gundam Arms/Legs", "S Gundam Arms/Legs", "Z Gundam Arms/Legs", "ZZ Gundam Arms/Legs"]},
 {l:"Movable Shield", e:"Boost Speed", v:"+3%", t:"regular"},
 {l:"Multiple Construction Armor (MCA)", e:"Durability", v:"+15%", t:"regular", s:["Crossbone Gundam Body"]},
+{l:"Multi-purpose Sensor Unit", e:"Increase in EX Gauge when Attack hits", v:"+20%", t:"special", s:["Aegis Gundam Head"]},
 {l:"Nanolaminate Armor", e:"Physical Resistance", v:"+15%", t:"regular"},
 {l:"Nanoskin", e:"Auto-Repair", v:"+2000/s", t:"special", s:["Turn A Body/Legs", "Turn X Body/Legs"]},
 {l:"New Model Generator", e:"Boost Recovery", v:"+25%", t:"special"},
