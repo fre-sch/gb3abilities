@@ -19,52 +19,67 @@
 <script src="data.js"></script>
 <script>
 _.templateSettings = {
+  evaluate: /\{%(.+?)%\}/g,
   interpolate: /\{\{(.+?)\}\}/g
 }
-$(function(event) {
-    var sortKey = "l"
+if (!Array.prototype.last) {
+    Array.prototype.last = function() {
+        return this[this.length-1]
+    }
+}
+$(function() {
     var tplSrc = $("#ability-template").html()
     var tpl = _.template(tplSrc, {variable:"it"})
+    var $list = $("#ability-list")
 
     function resetScrollspy() {
         $('[data-spy="scroll"]').each(function () {
-          var $spy = $(this).scrollspy('refresh')
+          $(this).scrollspy('refresh')
         })
     }
-    
-    function renderAbilities() {
-        GB3.sortBy(sortKey, "asc")
-        var $list = $("#ability-list")
-        $list.empty()
-        var index = null
-        for (var i=0; i < GB3.Abilities.length; ++i) {
-            var itemData = GB3.Abilities[i]
-            var itemIndex = itemData[sortKey].toLowerCase().charAt(0)
-            var holder = document.createElement("template")
-            var item = {index: null}
-            if (itemIndex != index) {
-                index = itemIndex
-                item.index = index
+    function itemSortIndex(sortKey, itemData) {
+        var itemSortValue = itemData[sortKey].toLowerCase()
+        if (sortKey == "l") {
+            var v = itemSortValue.charAt(0)
+            return {id: v, label: v}
+        }
+        else if (sortKey == "e") {
+            return {
+                label: itemSortValue,
+                id: itemSortValue.charAt(0)
             }
-            _.extend(item, itemData)
-            holder.innerHTML = tpl(item)
-            $list.append(holder.content)
         }
     }
-    renderAbilities()
+
+    function renderAbilities($list, sortKey) {
+        GB3.sortBy(sortKey, "asc")
+        var indices = []
+        var result = []
+        for (var itemData of GB3.Abilities) {
+            var itemIndex = itemSortIndex(sortKey, itemData)
+            var item = {index: null}
+            if (itemIndex.id != indices.last()) {
+                indices.push(itemIndex.id)
+                item.index = itemIndex
+            }
+            _.extend(item, itemData)
+            result.push(tpl(item))
+        }
+        $list.html(result)
+    }
+
+    renderAbilities($list, "l")
 
     $("#sort-name").click(function() {
-        sortKey = "l"
         $(this).parent().parent().find("a.nav-link").removeClass("active")
         $(this).toggleClass("active")
-        renderAbilities()
+        renderAbilities($list, "l")
         resetScrollspy()
     })
     $("#sort-ability").click(function() {
-        sortKey = "e"
         $(this).parent().parent().find("a.nav-link").removeClass("active")
         $(this).toggleClass("active")
-        renderAbilities()
+        renderAbilities($list, "e")
         resetScrollspy()
     })
 })
@@ -74,7 +89,8 @@ body {
     position: relative;
 }
 .ability {
-  margin-bottom: 0.5em
+  margin-bottom: 0.5em;
+  padding-left: 1em;
 }
 .ability-label {
   font-size: 1.1em;
@@ -85,6 +101,23 @@ body {
 }
 .ability-special .ability-label {
   color: #e90;
+}
+.ability-index-section {
+    font-size: 1em;
+    height: 0;
+    border-bottom: 1px solid #ddd;
+    position:relative;
+    margin: 1em 0 .8em 0;
+}
+.ability-index-section span {
+    position: relative;
+    top: -.8em;
+    /* width: 1em; */
+    text-align: center;
+    display: inline-block;
+    background-color: #fff;
+    padding-right: .2em;
+    color: #888;
 }
 #sorting {
     position:sticky;
@@ -99,8 +132,9 @@ body {
   top: 2px;
 }
 
-#gb3abilities .nav>li>a {
+#gb3abilities .nav>li>a.nav-link {
   padding: 0 10px;
+  text-align: center;
 }
 #gb3abilities .nav>li>a.nav-link.active {
   padding: 3px 10px;
@@ -109,9 +143,17 @@ body {
 </head>
 <body data-spy="scroll" data-target="#alpha-index" id="gb3abilities">
 <template id="ability-template">
-  <div class="ability ability-{{it.t}}" id="{{it.index?'index-'+it.index:''}}">
+  {% if(it.index){ %}
+  <div class="ability-index-section"
+    id="index-{{it.index.id}}"><span>{{it.index.label.toUpperCase()}}</span></div>
+  {% } %}
+  <div class="ability ability-{{it.t}}">
     <div class="ability-label">{{it.l}}</div>
-    <div class="ability-description">{{it.e}} {{it.v}}</div>
+    <div class="ability-description">{{it.e}} {{it.v}}<br/>
+    {% if (it.s) for(var s of it.s){ %}
+        <span class="badge badge-light">{{s}}</span>
+    {% } %}
+    </div>
   </div>
 </template>
 <div class="container" id="index-top">
@@ -121,9 +163,9 @@ body {
       <div id="ability-list"></div>
     </div>
 
-    <div class="flex-column">
+    <div class="flex-column" style="padding-right: 0.3em">
       <nav id="alpha-index">
-        <ul class="nav nav-pills flex-column">
+        <ul class="nav nav-pills flex-column" id="alpha-index-list">
           <li class="nav-item"><a class="nav-link" href="#index-top">#</a></li>
           <li class="nav-item"><a class="nav-link" href="#index-a">A</a></li>
           <li class="nav-item"><a class="nav-link" href="#index-b">B</a></li>
