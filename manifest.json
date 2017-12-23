@@ -7,6 +7,8 @@
     "orientation": "portrait-primary",
     "scope": "/",
     "theme_color": "rgb(57, 58, 163)",
+    "start_url": "index.html",
+    "display": "minimal-ui",
     "icons": [{
         "src": "launcher-icons/favicon.png",
         "sizes": "16x16",
@@ -14,34 +16,26 @@
     }, {
         "src": "launcher-icons/36android.png",
         "sizes": "36x36",
-        "type": "image/png",
-        "density": 0.75
+        "type": "image/png"
     }, {
         "src": "launcher-icons/48android.png",
         "sizes": "48x48",
-        "type": "image/png",
-        "density": 1.0
+        "type": "image/png"
     }, {
         "src": "launcher-icons/72android.png",
         "sizes": "72x72",
-        "type": "image/png",
-        "density": 1.5
+        "type": "image/png"
     }, {
-        "src": "launcher-icons/96android",
+        "src": "launcher-icons/96android.png",
         "sizes": "96x96",
-        "type": "image/png",
-        "density": 2.0
+        "type": "image/png"
     }, {
-        "src": "launcher-icons/144android",
+        "src": "launcher-icons/144android.png",
         "sizes": "144x144",
-        "type": "image/png",
-        "density": 3.0
+        "type": "image/png"
     }, {
-        "src": "launcher-icons/192android",
+        "src": "launcher-icons/192android.png",
         "sizes": "192x192",
-        "type": "image/png",
-        "density": 4.0
-    }],
-    "start_url": "index.html",
-    "display": "standalone"
+        "type": "image/png"
+    }]
 }
