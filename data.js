@@ -1,11 +1,24 @@
 GB3 = {
     sortBy: function(key, dir) {
         dir = (dir == "asc" ? 1 : -1)
-        this.Abilities.sort(function(a, b) {
-            if (a[key] < b[key]) return -dir
-            if (a[key] > b[key]) return dir
-            return 0
-        });
+        if (key=="e") {
+            this.Abilities.sort(function(a, b){
+                return dir * this.abilityCompare(a, b)
+            }.bind(this));
+        }
+        else {
+            this.Abilities.sort(function(a, b) {
+                return dir * a[key].localeCompare(b[key])
+            });
+        }
+    },
+    abilityCompare: function(a, b) {
+        var e = a.e.localeCompare(b.e)
+        if (e != 0) return -e
+        if (a.t=="special" && b.t=="special") return parseInt(a.v) - parseInt(b.v)
+        if (a.t=="special") return 1
+        if (b.t=="special") return -1
+         return parseInt(a.v) - parseInt(b.v)
     }
 }
 GB3.Abilities = [

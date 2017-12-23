@@ -52,7 +52,7 @@ $(function() {
     }
 
     function renderAbilities($list, sortKey) {
-        GB3.sortBy(sortKey, "asc")
+        GB3.sortBy(sortKey, sortKey=="e"?"desc":"asc")
         var indices = []
         var result = []
         for (var itemData of GB3.Abilities) {
