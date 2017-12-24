@@ -91,6 +91,7 @@ body {
 .ability {
   margin-bottom: 0.5em;
   padding-left: 1em;
+  clear:left;
 }
 .ability-label {
   font-size: 1.1em;
@@ -103,21 +104,19 @@ body {
   color: #e90;
 }
 .ability-index-section {
-    font-size: 1em;
-    height: 0;
-    border-bottom: 1px solid #ddd;
     position:relative;
-    margin: 1em 0 .8em 0;
+    font-size: 1em;
+    height: 1px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 1.2em;
+    margin-right: 0.8em;
 }
 .ability-index-section span {
-    position: relative;
-    top: -.8em;
-    /* width: 1em; */
-    text-align: center;
-    display: inline-block;
+    margin-top: -.8em;
+    display: block;
+    float: left;
     background-color: #fff;
-    padding-right: .2em;
-    color: #888;
+    padding-right: .5em;
 }
 #sorting {
     position:sticky;
@@ -145,7 +144,9 @@ body {
 <template id="ability-template">
   {% if(it.index){ %}
   <div class="ability-index-section"
-    id="index-{{it.index.id}}"><span>{{it.index.label.toUpperCase()}}</span></div>
+    id="index-{{it.index.id}}">
+    <span class="text-secondary">{{it.index.label.toUpperCase()}}</span>
+  </div>
   {% } %}
   <div class="ability ability-{{it.t}}">
     <div class="ability-label">{{it.l}}</div>
