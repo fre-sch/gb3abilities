@@ -22,7 +22,7 @@ GB3 = {
     }
 }
 GB3.Abilities = [
-{l:"8", e:"Reaction Speed", v:"+2.5%", t:"regular", s:["Astray Red Frame Body"]},
+{l:"8 (Hachi)", e:"Reaction Speed", v:"+2.5%", t:"regular", s:["Astray Red Frame Body"]},
 {l:"Active Binder", e:"Boost Speed", v:"+3%", t:"regular"},
 {l:"AGE System", e:"Awakening Duration", v:"+2s", t:"special", s:["Gundam AGE-1 Body", "Gundam AGE-2 Normal Body", "Gundam AGE-3 Normal Body", "Gundam AGE-FX Body", "Gundam AGE-2 Dark Hound Body"]},
 {l:"Ahab Reactor", e:"Thruster Capacity", v:"+5000", t:"regular"},

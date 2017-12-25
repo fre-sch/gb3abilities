@@ -1,0 +1,53 @@
+body {
+    position: relative;
+}
+.ability {
+  margin-bottom: 0.7em;
+  padding-left: 1em;
+  clear:left;
+}
+.ability-label {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+.ability-regular .ability-label {
+  color: #555;
+}
+.ability-special .ability-label {
+  color: #e90;
+}
+.ability-index-section {
+    position:relative;
+    font-size: 1em;
+    height: 1px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 1.2em;
+    margin-right: 0.8em;
+}
+.ability-index-section span {
+    margin-top: -.7em;
+    display: block;
+    float: left;
+    background-color: #fff;
+    padding-right: .5em;
+}
+#sorting {
+    position:sticky;
+    bottom:0;
+    background-color: #fff;
+}
+#sorting nav {
+    padding: 5px;
+}
+#alpha-index {
+  position: sticky;
+  top: 2px;
+}
+
+#gb3abilities .nav>li>a.nav-link {
+  padding: 0 10px;
+  text-align: center;
+}
+#gb3abilities .nav>li>a.nav-link.active {
+  padding: 3px 10px;
+}

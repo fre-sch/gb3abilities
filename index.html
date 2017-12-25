@@ -1,144 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="GB3: Abilities">
-<link rel="icon" sizes="16x16" href="launcher-icons/favicon.png">
-<link rel="icon" sizes="192x192" href="launcher-icons/192android.png">
-<link rel="icon" sizes="128x128" href="launcher-icons/128android.png">
-<meta charset="UTF-8">
-<title>Gundam Breaker 3 - Break Edition: Abilities</title>
-<link rel="manifest" href="manifest.json"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<script src="data.js"></script>
-<script>
-_.templateSettings = {
-  evaluate: /\{%(.+?)%\}/g,
-  interpolate: /\{\{(.+?)\}\}/g
-}
-if (!Array.prototype.last) {
-    Array.prototype.last = function() {
-        return this[this.length-1]
-    }
-}
-$(function() {
-    var tplSrc = $("#ability-template").html()
-    var tpl = _.template(tplSrc, {variable:"it"})
-    var $list = $("#ability-list")
+    <!-- MOBILE-APP-INSTALL -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="GB3: Abilities">
+    <link rel="icon" sizes="16x16" href="launcher-icons/favicon.png"/>
+    <link rel="icon" sizes="192x192" href="launcher-icons/192android.png"/>
+    <link rel="icon" sizes="128x128" href="launcher-icons/128android.png"/>
+    <!-- /MOBILE-APP-INSTALL -->
 
-    function resetScrollspy() {
-        $('[data-spy="scroll"]').each(function () {
-          $(this).scrollspy('refresh')
-        })
-    }
-    function itemSortIndex(sortKey, itemData) {
-        var itemSortValue = itemData[sortKey].toLowerCase()
-        if (sortKey == "l") {
-            var v = itemSortValue.charAt(0)
-            return {id: v, label: v}
-        }
-        else if (sortKey == "e") {
-            return {
-                label: itemSortValue,
-                id: itemSortValue
-            }
-        }
-    }
+    <title>GB3: Abilities</title>
 
-    function renderAbilities($list, sortKey) {
-        GB3.sortBy(sortKey, sortKey=="e"?"desc":"asc")
-        var indices = []
-        var result = []
-        for (var itemData of GB3.Abilities) {
-            var itemIndex = itemSortIndex(sortKey, itemData)
-            var item = {index: null}
-            if (itemIndex.id != indices.last()) {
-                indices.push(itemIndex.id)
-                item.index = itemIndex
-            }
-            _.extend(item, itemData)
-            result.push(tpl(item))
-        }
-        $list.html(result)
-    }
-
-    renderAbilities($list, "l")
-
-    $("#sort-name").click(function() {
-        $(this).parent().parent().find("a.nav-link").removeClass("active")
-        $(this).toggleClass("active")
-        renderAbilities($list, "l")
-        resetScrollspy()
-    })
-    $("#sort-ability").click(function() {
-        $(this).parent().parent().find("a.nav-link").removeClass("active")
-        $(this).toggleClass("active")
-        renderAbilities($list, "e")
-        resetScrollspy()
-    })
-})
-</script>
-<style>
-body {
-    position: relative;
-}
-.ability {
-  margin-bottom: 0.7em;
-  padding-left: 1em;
-  clear:left;
-}
-.ability-label {
-  font-size: 1.1em;
-  font-weight: 500;
-}
-.ability-regular .ability-label {
-  color: #555;
-}
-.ability-special .ability-label {
-  color: #e90;
-}
-.ability-index-section {
-    position:relative;
-    font-size: 1em;
-    height: 1px;
-    border-bottom: 1px solid #ddd;
-    margin-top: 1.2em;
-    margin-right: 0.8em;
-}
-.ability-index-section span {
-    margin-top: -.8em;
-    display: block;
-    float: left;
-    background-color: #fff;
-    padding-right: .5em;
-}
-#sorting {
-    position:sticky;
-    bottom:0;
-    background-color: #fff;
-}
-#sorting nav {
-    padding: 5px;
-}
-#alpha-index {
-  position: sticky;
-  top: 2px;
-}
-
-#gb3abilities .nav>li>a.nav-link {
-  padding: 0 10px;
-  text-align: center;
-}
-#gb3abilities .nav>li>a.nav-link.active {
-  padding: 3px 10px;
-}
-</style>
+    <link rel="manifest" href="manifest.json"/>
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
 </head>
 <body data-spy="scroll" data-target="#alpha-index" id="gb3abilities">
 <template id="ability-template">
@@ -157,6 +50,9 @@ body {
     </div>
   </div>
 </template>
+<template id="index-template">
+    <li class="nav-item"><a class="nav-link" href="#index-{{it}}">{{it.toUpperCase()}}</a></li>
+</template>
 <div class="container" id="index-top">
   <div class="row">
 
@@ -167,33 +63,6 @@ body {
     <div class="flex-column" style="padding-right: 0.3em">
       <nav id="alpha-index">
         <ul class="nav nav-pills flex-column" id="alpha-index-list">
-          <li class="nav-item"><a class="nav-link" href="#index-top">#</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-a">A</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-b">B</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-c">C</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-d">D</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-e">E</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-f">F</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-g">G</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-h">H</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-i">I</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-j">J</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-k">K</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-l">L</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-m">M</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-n">N</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-o">O</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-p">P</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-q">Q</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-r">R</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-s">S</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-t">T</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-u">U</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-v">V</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-w">W</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-x">X</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-y">Y</a></li>
-          <li class="nav-item"><a class="nav-link" href="#index-z">Z</a></li>
         </ul>
       </nav>
     </div>
