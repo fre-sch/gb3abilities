@@ -1,6 +1,11 @@
 body {
     position: relative;
 }
+
+#ability-list {
+    padding-left: 0;
+    list-style: none;
+}
 .ability {
   margin-bottom: 0.7em;
   padding-left: 1em;
@@ -9,19 +14,30 @@ body {
 .ability-label {
   font-size: 1.1em;
   font-weight: 500;
+  display: block;
+  clear: left;
 }
-.ability-regular .ability-label {
+.ability-rarity {
+    display:none;
+}
+.ability-sources {
+    padding-left: 0;
+    list-style: none;
+}
+.ability-rarity-regular .ability-label {
   color: #555;
+  color: var(--gray-dark);
 }
-.ability-special .ability-label {
+.ability-rarity-special .ability-label {
   color: #e90;
 }
 .ability-index-section {
-    position:relative;
     font-size: 1em;
     height: 1px;
     border-bottom: 1px solid #ddd;
-    margin-top: 1.2em;
+    margin-left: -1em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
     margin-right: 0.8em;
 }
 .ability-index-section span {
@@ -30,6 +46,9 @@ body {
     float: left;
     background-color: #fff;
     padding-right: .5em;
+    text-transform: uppercase;
+    color: #888;
+    color: var(--gray);
 }
 #sorting {
     position:sticky;
@@ -47,6 +66,7 @@ body {
 #gb3abilities .nav>li>a.nav-link {
   padding: 0 10px;
   text-align: center;
+  text-transform: uppercase;
 }
 #gb3abilities .nav>li>a.nav-link.active {
   padding: 3px 10px;
