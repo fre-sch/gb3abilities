@@ -1,3 +1,8 @@
+function format(string, values) {
+    return string.replace(/\{([^\}]+)\}/g, function(m, p){
+        return values[p] || m
+    })
+}
 function AbilityViewModel(node, ns) {
     this.ns = ns
     var _ns = "." + this.ns
@@ -34,11 +39,10 @@ AbilityViewModel.prototype.clearIndex = function() {
 }
 AbilityViewModel.prototype.setIndex = function (index) {
     var tpl = document.createElement("template")
-    tpl.innerHTML = (
-            "<div id=\"index-$id\" class=\"$class\"><span>$label</span></div>"
-        ).replace("$id", index.id)
-        .replace("$class", this.ns + "-index-section")
-        .replace("$label", index.label)
+    tpl.innerHTML = format(
+        '<div class="{class}"><a id="index-{id}"></a><span>{label}</span></div>',
+        {id: index.id, label: index.label, class: this.ns + "-index-section"}
+    )
     this.view.insertBefore(tpl.content, this.view.firstChild)
 }
 AbilityViewModel.compareEffect = function(a, b) {
@@ -60,12 +64,12 @@ AbilityViewModel.compare = function(key) {
 }
 
 Abilities = {
-    listView: null,
+    view: null,
     viewModels: [],
     init: function(node, ns) {
         var _ns = "." + ns
-        this.listView = node
-        this.listView.querySelectorAll(_ns).forEach(function(node) {
+        this.view = node
+        this.view.querySelectorAll(_ns).forEach(function(node) {
             this.viewModels.push(new AbilityViewModel(node, ns))
         }.bind(this))
     },
@@ -76,7 +80,7 @@ Abilities = {
         })
         for (var viewModel of this.viewModels) {
             // appending node that is already a child reorders children
-            this.listView.appendChild(viewModel.view)
+            this.view.appendChild(viewModel.view)
         }
     },
     indexBy: function(key) {
@@ -108,7 +112,7 @@ IndexView = {
     },
     update: function(indices) {
         var html = [
-            '<li class="nav-item"><a class="nav-link" href="#index-top">top</a></li>'
+            '<li class="nav-item"><a class="nav-link" href="#">top</a></li>'
         ]
         for (var index of indices) {
             html.push(this.indexHtml(index))
@@ -117,10 +121,9 @@ IndexView = {
         resetScrollspy()
     },
     indexHtml: function(index) {
-        return '<li class="nav-item">'
-            + '<a class="nav-link" href="#index-' + index.id
-            +'">' + index.label
-            + '</a></li>'
+        return format(
+            '<li class="nav-item"><a class="nav-link" href="#index-{id}">{label}</a></li>',
+            index)
     }
 }
 
@@ -132,17 +135,26 @@ function init() {
     IndexView.update(Abilities.indexBy("label"))
 
     $("#sort-name").click(function() {
-        $(this).parent().parent().find("a.nav-link").removeClass("active")
+        $(this).parents("nav").find(".nav-link").removeClass("active")
         $(this).toggleClass("active")
         Abilities.sortBy("label", "asc")
         IndexView.update(Abilities.indexBy("label"))
     })
     $("#sort-ability").click(function() {
-        $(this).parent().parent().find("a.nav-link").removeClass("active")
+        $(this).parents("nav").find(".nav-link").removeClass("active")
         $(this).toggleClass("active")
         Abilities.sortBy("effect")
         Abilities.indexBy("effect")
         IndexView.update([])
+    })
+
+    $("#primary-navbar .nav-link").click(function(e) {
+        e.preventDefault()
+        var page = $(this).attr("href")
+        $(page).siblings().hide()
+        $(page).show()
+        $(this).parents("nav").find(".nav-item").removeClass("active")
+        $(this).parent().toggleClass("active")
     })
 }
 

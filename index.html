@@ -12,7 +12,7 @@
   <link rel="icon" sizes="128x128" href="launcher-icons/128android.png"/>
   <!-- /MOBILE-APP-INSTALL -->
 
-  <title>GB3: Abilities</title>
+  <title>Gundam Breaker 3: Reference</title>
 
   <link rel="manifest" href="manifest.json"/>
   <link rel="stylesheet"
@@ -32,12 +32,30 @@
   <script src="app.js"></script>
 </head>
 <body data-spy="scroll" data-target="#alpha-index" id="gb3abilities">
-<template id="index-template">
-  <li class="nav-item">
-    <a class="nav-link" href="#index-{{it}}">{{it.toUpperCase()}}</a>
-  </li>
-</template>
-<div class="container" id="index-top">
+
+<nav id="primary-navbar" class="navbar navbar-expand navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">GB3: Reference</a>
+    <div class="col">
+    <nav>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link"
+            href="#page-abilities">Abilities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+            href="#page-derives">Derives</a>
+        </li>
+      </ul>
+    </nav>
+    </div>
+  </div>
+</nav>
+
+<div id="pages">
+
+<div class="container" id="page-abilities" role="tabpanel" style="">
   <div class="row">
     <div class="col">
 
@@ -1295,9 +1313,8 @@
     </div>
 
   </div>
-</div>
-<footer id="sorting">
-  <div class="container">
+
+  <footer id="sorting" class="bg-white">
     <nav>
       <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
@@ -1308,7 +1325,214 @@
         </li>
       </ul>
     </nav>
+  </footer>
+</div>
+
+<div class="container" id="page-derives" role="tabpanel" style="display:none">
+  <div class="row">
+    <div class="col">
+
+      <ul id="derives-list">
+        <li class="derive">
+          <span class="derive-result">Gundam</span>
+          <ul class="derive-bases">
+            <li class="derive-base">No sources</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">G-3 Gundam</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">GM</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Gundam F91</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">GM</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">GM Commando</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">GM II</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">GM</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Guntank</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">G-3 Gundam</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Perfect Gundam (Arms, Legs)</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Gundam Exia</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">G-3 Gundam</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Guncannon</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">G-3 Gundam</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Ground Gundam</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">G-3 Gundam</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Full Armor Gundam</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">Psyco Zaku</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Gundam G-Self</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">GM</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Gundam AGE-1 Normal</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">GM</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Musha Gundam</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">GM</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Victory Gundam</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Gundam</li>
+            <li class="derive-base">GM</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Blue Destiny Unit 1</span>
+          <ul class="derive-bases">
+            <li class="derive-base">GM</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Gelgoog (Char)</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Zaku II</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Dom Tropen (Sand Brown)</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Zaku II</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Zaku Minelayer</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Zaku II</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Zaku II FS</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Zaku II</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Zudah</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Zaku II</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">High-Mobility Gelgoog</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Zaku II</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Acguy</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Zaku II</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">SUMO</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Zaku II</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Build Burning Gundam</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Zaku II</li>
+          </ul>
+        </li>
+
+        <li class="derive">
+          <span class="derive-result">Zudah (Captain's Unit)</span>
+          <ul class="derive-bases">
+            <li class="derive-base">Zaku II S</li>
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
   </div>
-</footer>
+</div>
+
+</div>
 </body>
 </html>
