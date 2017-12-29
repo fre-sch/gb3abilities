@@ -127,6 +127,11 @@ IndexView = {
     }
 }
 
+function navLinkSetActive(linkElement) {
+    $(linkElement).parents("nav").find(".nav-link").removeClass("active")
+    $(linkElement).toggleClass("active")
+}
+
 
 function init() {
     Abilities.init(document.querySelector("#ability-list"), "ability")
@@ -135,14 +140,12 @@ function init() {
     IndexView.update(Abilities.indexBy("label"))
 
     $("#sort-name").click(function() {
-        $(this).parents("nav").find(".nav-link").removeClass("active")
-        $(this).toggleClass("active")
+        navLinkSetActive(this)
         Abilities.sortBy("label", "asc")
         IndexView.update(Abilities.indexBy("label"))
     })
     $("#sort-ability").click(function() {
-        $(this).parents("nav").find(".nav-link").removeClass("active")
-        $(this).toggleClass("active")
+        navLinkSetActive(this)
         Abilities.sortBy("effect")
         Abilities.indexBy("effect")
         IndexView.update([])
@@ -151,10 +154,8 @@ function init() {
     $("#primary-navbar .nav-link").click(function(e) {
         e.preventDefault()
         var page = $(this).attr("href")
-        $(page).siblings().hide()
-        $(page).show()
-        $(this).parents("nav").find(".nav-item").removeClass("active")
-        $(this).parent().toggleClass("active")
+        $(page).show().siblings().hide()
+        navLinkSetActive(this)
     })
 }
 
