@@ -7,11 +7,9 @@ function AbilityViewModel(node, ns) {
     this.ns = ns
     var _ns = "." + this.ns
     this.label = node.querySelector(_ns + "-label").textContent
-    this.rarity = node.querySelector(_ns + "-rarity").textContent
     this.effect = node.querySelector(_ns + "-effect").textContent
     this.value = parseInt(node.querySelector(_ns + "-value").textContent)
     this.view = node
-    node.classList.add(this.ns + "-rarity-" + this.rarity)
     node.querySelectorAll(_ns + "-source").forEach(function(src) {
         src.classList.add("badge")
         src.classList.add("badge-light")
@@ -48,10 +46,6 @@ AbilityViewModel.prototype.setIndex = function (index) {
 AbilityViewModel.compareEffect = function(a, b) {
     var e = a.effect.localeCompare(b.effect)
     if (e != 0) return -e
-    if (a.rarity=="special" && b.rarity=="special")
-        return a.value - b.value
-    if (a.rarity=="special") return 1
-    if (b.rarity=="special") return -1
     return a.value - b.value
 }
 AbilityViewModel.compare = function(key) {
