@@ -151,6 +151,7 @@ function init() {
         $(page).show().siblings().hide()
         navLinkSetActive(this)
     })
+    $(".derive-base").addClass(["badge", "badge-light"])
 }
 
 $(init)

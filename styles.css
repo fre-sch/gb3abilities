@@ -97,11 +97,12 @@ body {
 }
 
 .derive-bases {
+  list-style: none;
+  padding: 0;
 }
 
 .derive-bases:before {
     content: 'Bases:';
-    margin-left: -40px;
 }
 
 .derive-bases > li {
