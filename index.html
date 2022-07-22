@@ -16,18 +16,16 @@
 
   <link rel="manifest" href="manifest.json"/>
   <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-    crossorigin="anonymous"/>
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.6.1/dist/cyborg/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css"/>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-    integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
     crossorigin="anonymous"></script>
   <script src="app.js"></script>
 </head>
@@ -46,6 +44,10 @@
         <li class="nav-item">
           <a class="nav-link"
             href="#page-derives">Derives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+            href="#page-placement">Placement</a>
         </li>
       </ul>
     </nav>
@@ -1180,16 +1182,16 @@
 
   </div>
 
-  <footer id="sorting" class="bg-white">
-    <nav>
-      <ul class="nav nav-pills nav-fill">
-        <li class="nav-item">
-          <a class="nav-link active" href="#index-top" id="sort-name">By Name</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#index-top" id="sort-ability">By Ability</a>
-        </li>
-      </ul>
+  <footer id="sorting" class="navbar navbar-dark bg-dark fixed-bottom">
+    <nav style="width:100%">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link active" href="#index-top" id="sort-name">By Name</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#index-top" id="sort-ability">By Ability</a>
+      </li>
+    </ul>
     </nav>
   </footer>
 </div>
@@ -1416,7 +1418,7 @@
             <li class="derive-base">Z Plus C1</li>
           </ul>
         </li>
-        
+
         <li class="derive">
           <span class="derive-result">Duel Gundam</span>
           <ul class="derive-bases">
@@ -1431,7 +1433,7 @@
             <li class="derive-base">Gundam Exia</li>
           </ul>
         </li>
-        
+
         <li class="derive">
           <span class="derive-result">00 Quan[T]</span>
           <ul class="derive-bases">
@@ -1459,6 +1461,454 @@
 
     </div>
   </div>
+</div>
+
+<div class="container" id="page-placement" role="tabpanel" style="display:none">
+    <div class="row">
+        <div class="part-ability col-4">(Body Part Class) EX Enhance</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="part-ability col-4">(Long Range Weapon Class) EX Enhance</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">(Short Range Weapon Class) EX Enhance</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Aerial Melee Damage</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Attack Hit: Burst Gain</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Increase in EX Gauge when Attack hits</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Attack Hit: Repair</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Auto-Repair per second</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Avoid Instant Death</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Awakening Duration</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Beam Guard</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Beam Resistance</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Boost Recovery Speed</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Boost</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Camouflage EX Extend</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Close Range Weapon DPS</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Close Range Weapon Mastery</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Combo Cancel Damage</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Damage to Shield</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Defense vs. locked-on enemy</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Durability Recovery</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Durability</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Enemy Kill: Burst Charge</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Enemy Kill: EX Charge</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Enemy Kill: Option Charge</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Enemy Kill: Repair</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Enemy Targeting Likelihood Down</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Enemy Targeting Likelihood Up</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">EX Cancel Damage</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">EX Enemy Kill: EX Charge</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Induce Knockback</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Induce Stagger</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Inflict Parts Out</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Knockback Resistance</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Long Range Weapon DPS</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Long Range Weapon Mastery</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Mobility</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Near Death Damage Inflict</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Near Death Damage Reduction</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Near Death Stagger/Knockback Immunity</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Option Charge Speed</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Option DPS</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Option Gauge Capacity</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Parts Break: Burst Charge</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Parts Break: EX Charge</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Parts Break: Option Charge</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Parts Break: Repair</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Parts-Out Resistance</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Physical Guard</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Physical Resistance</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Ranged Weapon Blast Damage</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Ranged Weapon Blast Radius</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Ranged Weapon Bullet Speed</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Ranged Weapon Burst Ability</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Ranged Weapon Charge Speed</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Ranged Weapon Gauge Capacity</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Ranged Weapon Penetration</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Ranged Weapon Proximity Fuse</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Ranged Weapon Tracking Ability</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Ranged Weapon Velocity</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Response</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-no"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Shield Weapon Capacity</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Shield Weapon Charge Speed</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Shield Weapon DPS</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Stagger Resistance</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Step Distance</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Step Invincibility Time</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Support EX Extend</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Takedown Kill: EX Charge</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-no"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-yes"></div><div class="parts-img ranged-yes"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Thruster Capacity</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Trance EX Extend</div>
+        <div class="col">
+            <div class="parts-img head-no"></div><div class="parts-img body-yes"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Treasure Hunter</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-no"></div><div class="parts-img arms-no"></div><div class="parts-img legs-no"></div><div class="parts-img backpack-no"></div><div class="parts-img shield-no"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Undetectable by Mines</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div></div>
+
+        <div class="row">
+        <div class="part-ability col-4">Undetectable by Turrets</div>
+        <div class="col">
+            <div class="parts-img head-yes"></div><div class="parts-img body-yes"></div><div class="parts-img arms-yes"></div><div class="parts-img legs-yes"></div><div class="parts-img backpack-yes"></div><div class="parts-img shield-yes"></div><div class="parts-img melee-no"></div><div class="parts-img ranged-no"></div>
+        </div>
+    </div>
 </div>
 
 </div>

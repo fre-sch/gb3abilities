@@ -2,6 +2,10 @@ body {
     position: relative;
 }
 
+.navbar {
+    padding: 0.3rem !important;
+}
+
 #ability-list {
     padding-left: 0;
     list-style: none;
@@ -44,7 +48,7 @@ body {
     margin-top: -.7rem;
     display: block;
     float: left;
-    background-color: #fff;
+    background-color: #060606;
     padding-right: .5rem;
     text-transform: uppercase;
     color: #888;
@@ -55,13 +59,6 @@ body {
     position: relative;
     top: -4rem;
     visibility: hidden;
-}
-#sorting {
-    position:sticky;
-    bottom:0;
-}
-#sorting nav {
-    padding: 0.2rem;
 }
 #alpha-index {
   position: sticky;
@@ -106,4 +103,57 @@ body {
 }
 
 .derive-bases > li {
+}
+
+/******************************************************************************/
+#page-placement .row {
+    align-items: center;
+}
+#page-placement div.parts-img {
+    width: 32px;
+    height: 32px;
+    background-image: url(icons/parts.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    display: inline-block;
+}
+
+#page-placement .part-ability {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#page-placement .col:nth-child(2) {
+    white-space: nowrap;
+}
+
+div.parts-img.body-no,div.parts-img.body-yes {
+    background-position: top right 85.8%;
+}
+div.parts-img.arms-no,div.parts-img.arms-yes {
+    background-position: top right 71.5%;
+}
+div.parts-img.legs-no,div.parts-img.legs-yes {
+    background-position: top right 57.2%;
+}
+div.parts-img.backpack-no,div.parts-img.backpack-yes {
+    background-position: top right 42.9%;
+}
+div.parts-img.shield-no,div.parts-img.shield-yes {
+    background-position: top right 28.6%;
+}
+div.parts-img.melee-no,div.parts-img.melee-yes {
+    background-position: top right 14.3%;
+}
+div.parts-img.ranged-no,div.parts-img.ranged-yes {
+    background-position: top right 0%;
+}
+div.parts-img.head-no,
+div.parts-img.body-no,
+div.parts-img.arms-no,
+div.parts-img.legs-no,
+div.parts-img.backpack-no,
+div.parts-img.shield-no,
+div.parts-img.melee-no,
+div.parts-img.ranged-no {
+    filter: brightness(25%);
 }
