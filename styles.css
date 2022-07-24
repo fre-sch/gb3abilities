@@ -1,109 +1,188 @@
 body {
-    position: relative;
+  position: relative;
 }
 
-#ability-list {
-    padding-left: 0;
-    list-style: none;
+.navbar,
+.navbar-brand {
+  padding: 0;
+  margin: 0;
 }
-.ability {
-  margin-bottom: 0.7rem;
-  padding-left: 1rem;
-  clear:left;
+
+.navbar > .container {
+  justify-content: start;
 }
-.ability-label {
-  font-size: 1.1rem;
-  font-weight: 500;
+
+footer.navbar > .container {
+  justify-content: center;
+}
+
+.badge {
+  border-radius: 0;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 0.5rem),
+    calc(100% - 0.5rem) 100%,
+    0 100%
+  );
+  margin-right: 0.1rem;
+  text-shadow: 0px 1px 3px var(--bs-gray-900);
+}
+
+.index-section {
+  border-top: 1px solid var(--bs-primary);
+  margin: 1.2rem 0 0.35rem 0;
+  position: relative;
+}
+.index-section a {
+  position: absolute;
   display: block;
-  clear: left;
+  font-size: 1px;
+  height: 1px;
+  width: 1px;
+  top: -3rem;
 }
-.ability-rarity {
-    display:none;
+.index-section span {
+  vertical-align: top;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 0.8rem;
 }
-.ability-sources {
-    padding-left: 0;
-    list-style: none;
-}
-.ability-rarity-regular .ability-label {
-  color: #555;
-  color: var(--gray-dark);
-}
-.ability-rarity-special .ability-label {
-  color: #e90;
-}
-.ability-index-section {
-    font-size: 1rem;
-    height: 1px;
-    border-bottom: 1px solid #ddd;
-    margin-left: -1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    margin-right: 0.8rem;
-}
-.ability-index-section span {
-    margin-top: -.7rem;
-    display: block;
-    float: left;
-    background-color: #fff;
-    padding-right: .5rem;
-    text-transform: uppercase;
-    color: #888;
-    color: var(--gray);
-}
-.ability-index-section a {
-    display: block;
-    position: relative;
-    top: -4rem;
-    visibility: hidden;
-}
-#sorting {
-    position:sticky;
-    bottom:0;
-}
-#sorting nav {
-    padding: 0.2rem;
-}
+
 #alpha-index {
   position: sticky;
   top: 3.6rem;
 }
 
-#gb3abilities .nav>li>a.nav-link {
+#alpha-index .nav-link {
   padding: 0 0.5rem;
   text-align: center;
   text-transform: uppercase;
 }
-#gb3abilities .nav>li>a.nav-link.active {
+#alpha-index .nav-link.active {
   padding: 0.1rem 0.5rem;
+}
+
+
+/******************************************************************************/
+
+#abilities {
+  padding-bottom: 3rem;
+}
+
+.ability-list {
+  padding-left: 0;
+  list-style: none;
+}
+.ability {
+  margin-bottom: 0.7rem;
+  padding-left: 1rem;
+}
+.ability-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+  color: var(--bs-gray-300);
+}
+.ability-rarity {
+  display: none;
+}
+.ability-sources {
+  padding-left: 0;
+  list-style: none;
+}
+
+#sorting {
+  position: sticky;
+  bottom: 0;
+}
+#sorting nav {
+  padding: 0.2rem;
 }
 
 /******************************************************************************/
 
 #derives-list {
-    padding-left: 0;
-    list-style: none;
+  padding-left: 0;
+  list-style: none;
 }
 .derive {
   margin-bottom: 0.7rem;
   padding-left: 1rem;
-  clear:left;
 }
 
 .derive-result {
   font-size: 1.1rem;
   font-weight: 500;
-  display: block;
-  clear: left;
+  color: var(--bs-gray-300);
+}
+.derive-base {
+  color: var(--bs-gray-300);
+  /* font-size: 0.9rem; */
 }
 
-.derive-bases {
-  list-style: none;
+/******************************************************************************/
+
+.parts-img {
+  width: 45px;
+  aspect-ratio: 1 / 1;
+  background-image: url(icons/parts.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: block;
+}
+.ability-label {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.ability-enabled {
+  display: flex;
+}
+.parts-img.body {
+  background-position: top right 85.8%;
+}
+.parts-img.arms {
+  background-position: top right 71.5%;
+}
+.parts-img.legs {
+  background-position: top right 57.2%;
+}
+.parts-img.backpack {
+  background-position: top right 42.9%;
+}
+.parts-img.shield {
+  background-position: top right 28.6%;
+}
+.parts-img.melee {
+  background-position: top right 14.3%;
+}
+.parts-img.ranged {
+  background-position: top right 0%;
+}
+div.parts-img.no {
+  filter: brightness(45%) contrast(1.5);
+}
+div.parts-img.yes {
+  filter: brightness(0.7) contrast(2) sepia(1) hue-rotate(160deg) saturate(3);
+}
+
+#placement .row {
+  margin-bottom: 0.5rem;
+}
+
+#placement footer.navbar .nav-link {
   padding: 0;
 }
 
-.derive-bases:before {
-    content: 'Bases:';
+#placement footer.navbar .nav-link .parts-img {
+
 }
 
-.derive-bases > li {
+#placement footer.navbar .nav-link.filter-true .parts-img {
+  filter: brightness(0.7) contrast(2) sepia(1) hue-rotate(160deg) saturate(3);
+}
+
+#placement footer.navbar .nav-link.filter-false .parts-img {
+  filter: brightness(45%) contrast(1.5);
 }
